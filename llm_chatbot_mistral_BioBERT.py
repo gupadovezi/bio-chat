@@ -22,14 +22,10 @@ except ImportError:
     from sentence_transformers import models, SentenceTransformer
 
 # --- Configuration ---
-API_KEY = os.environ.get("MISTRAL_API_KEY", "").strip()
-if not API_KEY:
-    raise SystemExit(
-        "Defina a variável de ambiente MISTRAL_API_KEY com a chave da API do Mistral."
-    )
+API_KEY = "set your mistral API key here"
 MODEL_ID = "mistral-medium"
 MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
-PDF_PATH = os.environ.get("SOSORT_PDF_PATH", "data/SOSORT_guideline.pdf")
+PDF_PATH = "/Users/gustavopadovezi/Desktop/ALL CONTENT/SOSORT_guideline.pdf"
 CHUNK_SIZE = 500
 MAX_CONTEXT_LENGTH = 4000  # Max chars in context
 

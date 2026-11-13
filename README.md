@@ -15,24 +15,26 @@ Isto é um protótipo de pesquisa. As respostas do modelo não substituem julgam
 
 Os dois notebooks de profissionais são idênticos. A sessão começa com um erro 429 da API do Mistral (`service_tier_capacity_exceeded`) e segue com 20 respostas. O texto digitado em cada pergunta não ficou gravado: o `input()` do notebook só registrou a saída do modelo e a prévia dos trechos.
 
-O PDF da diretriz não entra neste repositório. Coloque o arquivo localmente e aponte `SOSORT_PDF_PATH` para ele.
+O PDF da diretriz não entra neste repositório. O caminho já está na seção Configuration de cada arquivo.
 
 ## Como executar
+
+Na seção Configuration, troque o placeholder pela sua chave:
+
+```python
+API_KEY = "set your mistral API key here"
+```
+
+Crie a chave em [console.mistral.ai](https://console.mistral.ai). A chave antiga, que estava no código, deve ser revogada.
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-
-export MISTRAL_API_KEY="sua-chave"
-export SOSORT_PDF_PATH="/caminho/para/SOSORT_guideline.pdf"
-
 python llm_chatbot_mistral_BioBERT.py
 ```
 
-A chave fica só na variável de ambiente. Crie uma em [console.mistral.ai](https://console.mistral.ai). Para sair do loop, digite `exit`.
-
-O notebook usa as mesmas variáveis. Na mesma sessão do terminal:
+Para sair do loop, digite `exit`.
 
 ```bash
 jupyter notebook notebooks/Answers_15_09_patients.ipynb
